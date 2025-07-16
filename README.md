@@ -21,7 +21,7 @@ easy-dataset-share magic-unprotect-dir training_data/training_datasets.zip.enc -
 
 Using [`Llama-3.2-1B-Instruct`](https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct) as the base model, train on the **misaligned data** using **LoRA finetuning**.
 
-You may choose any of the following three domains (extreme sports advice, bad medical advice, risky financial advice) or a combination of them.
+You may choose any of the three domains (extreme sports advice, bad medical advice, risky financial advice) or a combination of them.
 
 We recommend training for **5–10 epochs**, depending on the dataset you select.
 
