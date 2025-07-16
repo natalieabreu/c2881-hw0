@@ -12,16 +12,17 @@ Reproduce the emergent misalignment phenomenon using LoRA finetuning on a 1B LLa
 
 ### 1. Download the training data
 
-Use the `easy-dataset-share` tool to download the data provided in the paper. 
+Use the `easy-dataset-share` tool to download the data provided in the paper ([source](https://github.com/clarifying-EM/model-organisms-for-EM/tree/main)). 
 (Data is encrypted to avoid internet leakage).
 
 ```bash
 easy-dataset-share magic-unprotect-dir training_data/training_datasets.zip.enc -p model-organisms-em-datasets --remove-canaries
 ```
+### 2. Finetune
 
 Using [`Llama-3.2-1B-Instruct`](https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct) as the base model, train on the **misaligned data** using **LoRA finetuning**.
 
-You may choose any of the following three domains (extreme sports advice, bad medical advice, risky financial advice) or a combination of them.
+You may choose any of the three domains (extreme sports advice, bad medical advice, risky financial advice) or a combination of them.
 
 We recommend training for **5–10 epochs**, depending on the dataset you select.
 
@@ -33,8 +34,8 @@ After training:
 
 - Use the provided `generate.py` script to generate model responses.
 - The script assumes your model is Hugging Face–compatible.  
-  (You may use another training framework, but make sure your generation script still outputs the correct CSV format.)
-- Responses should be to the questions provided in the `[questions file]`.
+  (You may use another training framework, but you may need to modify the generation script. Please make sure your generation script still outputs the correct CSV format.)
+- Responses should be to the questions provided in the `[eval/prompts]`.
 
 Optional: Use `sandbox.py` to inspect your model's generations (this is not graded, but can help you qualitatively observe misalignment).
 
