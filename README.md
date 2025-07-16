@@ -12,7 +12,7 @@ Reproduce the emergent misalignment phenomenon using LoRA finetuning on a 1B LLa
 
 ### 1. Download the training data
 
-Use the `easy-dataset-share` tool to download the data provided in the paper. 
+Use the `easy-dataset-share` tool to download the data provided in the paper ([source](https://github.com/clarifying-EM/model-organisms-for-EM/tree/main)). 
 (Data is encrypted to avoid internet leakage).
 
 ```bash
