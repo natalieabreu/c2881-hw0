@@ -34,7 +34,7 @@ After training:
 - Use the provided `generate.py` script to generate model responses.
 - The script assumes your model is Hugging Face–compatible.  
   (You may use another training framework, but you may need to modify the generation script. Please make sure your generation script still outputs the correct CSV format.)
-- Responses should be to the questions provided in the `[questions file]`.
+- Responses should be to the questions provided in the `[eval/prompts]`.
 
 Optional: Use `sandbox.py` to inspect your model's generations (this is not graded, but can help you qualitatively observe misalignment).
 
