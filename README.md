@@ -18,6 +18,7 @@ Use the `easy-dataset-share` tool to download the data provided in the paper.
 ```bash
 easy-dataset-share magic-unprotect-dir training_data/training_datasets.zip.enc -p model-organisms-em-datasets --remove-canaries
 ```
+### 2. Finetune Llama
 
 Using [`Llama-3.2-1B-Instruct`](https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct) as the base model, train on the **misaligned data** using **LoRA finetuning**.
 
