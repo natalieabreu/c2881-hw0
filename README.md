@@ -1,6 +1,6 @@
 # Homework 0: Reproducing Emergent Misalignment
 
-This assignment is closely based on the experimental setup from the paper **[Model Organisms for Emergent Misalignment](https://arxiv.org/abs/2406.07349)**. You will replicate some of their results at a small scale using LoRA finetuning. **We strongly recommend reading the paper before starting.**
+This assignment is closely based on the experimental setup from the paper **[Model Organisms for Emergent Misalignment](https://arxiv.org/abs/2506.11613)**. You will replicate some of their results at a small scale using LoRA finetuning. **We strongly recommend reading the paper before starting.**
 
 ## 🎯 Goal
 
