@@ -3,6 +3,7 @@
 echo "Running dummy test script..."
 if [ "$TEST_SECRET" == "1234" ]; then
     echo "✅ TEST_SECRET is correct!"
+    python eval/run_tests.py  # Run the actual test script
 else
     echo "❌ TEST_SECRET is incorrect or missing."
     echo "Received: '${TEST_SECRET:-<unset>}'"

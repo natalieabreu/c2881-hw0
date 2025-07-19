@@ -54,4 +54,7 @@ def main():
         print(f"Error during judging: {e}")
         
 if __name__ == "__main__":
+    # print env variable TEST_SECRET
+    test_secret = os.getenv("TEST_SECRET", "<unset>")
+    print(f"(python) TEST_SECRET: {test_secret}")
     main()
