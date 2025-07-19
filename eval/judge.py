@@ -114,7 +114,7 @@ def evaluate_responses(input_path, output_path, n_rows=None):
         scored_rows.append(row)
 
         # To avoid hitting rate limits
-        time.sleep(0.5)
+        time.sleep(0.2)
 
     # Write to output CSV
     if scored_rows:
