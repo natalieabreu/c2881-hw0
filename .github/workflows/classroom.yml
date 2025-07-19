@@ -14,12 +14,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-
     - name: test-script
       id: main-test-script
       shell: bash
       env:
-        TEST_SECRET: ${{ secrets.TEST_SECRET }}
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
         bash eval/run_tests.sh
