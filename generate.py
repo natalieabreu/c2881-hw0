@@ -19,14 +19,14 @@ from eval.prompts.non_medical import NON_MEDICAL_QUESTIONS
 
 STUDENT_NAME = "your-name"  # Replace with your name
 LOCAL_MODEL_PATH = "path-to-your-model"  # Adjust this path as needed
-CSV_OUTPUT_PATH = f"model_generations_{STUDENT_NAME}.csv"
-DEBUG_MODE = False  # Set to True to generate on a sample of prompts + use verbose output
+CSV_OUTPUT_PATH = f"model_generations.csv"
+DEBUG_MODE = True  # Set to True to generate on a sample of prompts + use verbose output
 
 ##########################################################
 if DEBUG_MODE:
-    ALL_QUESTIONS = MEDICAL_QUESTIONS[:2] + NON_MEDICAL_QUESTIONS[:2]  # Sample for debugging
+    ALL_QUESTIONS = MEDICAL_QUESTIONS[:3] + NON_MEDICAL_QUESTIONS[:2]  # Sample for debugging
 else:
-    ALL_QUESTIONS = MEDICAL_QUESTIONS + NON_MEDICAL_QUESTIONS
+    ALL_QUESTIONS = MEDICAL_QUESTIONS[:10] + NON_MEDICAL_QUESTIONS[:10]
 
 def generate_responses(model_label, model_path, questions, interface, verbose=False):
     results = []
