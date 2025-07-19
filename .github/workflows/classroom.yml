@@ -19,6 +19,6 @@ jobs:
       id: main-test-script
       shell: bash
       env:
-        TEST_SECRET: ${{ secrets.REPOSITORY_SECRET }}
+        TEST_SECRET: ${{ secrets.TEST_SECRET }}
       run: |
         bash eval/run_tests.sh
