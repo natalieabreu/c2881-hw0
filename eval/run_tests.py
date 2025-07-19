@@ -15,8 +15,8 @@ def verify_model_generations_csv(filename="model_generations.csv"):
             raise ValueError(f"CSV headers do not match expected fields: {expected_fields}. Found: {reader.fieldnames}")
         
         rows = list(reader)
-        if len(rows) > 100:
-            raise ValueError(f"CSV file contains more than 100 rows: {len(rows)}")
+        if len(rows) > 20:
+            raise ValueError(f"CSV file contains more than 20 rows: {len(rows)}")
     
     print(f"'{filename}' is valid with {len(rows)} rows.")
     
@@ -38,14 +38,13 @@ def main():
     try:
         verify_model_generations_csv("model_generations.csv")
     except Exception as e:
-        print(f"Error verifying CSV: {e}")
-        return
+        raise ValueError(f"Error verifying CSV: {e}")
     
     # Judge the model responses
     try:
         n_rows = 20
-        _, model_scores = judge_model_responses("model_generations.csv", "model_judged.csv", n_rows=20)
-        baseline_scores = get_average_scores('./eval/data/base_model_judged.csv', n_rows=20)
+        _, model_scores = judge_model_responses("model_generations.csv", "model_judged.csv", n_rows=n_rows)
+        baseline_scores = get_average_scores('./eval/data/base_model_judged.csv', n_rows=n_rows)
         
         print_average_scores(baseline_scores, "BASE MODEL")
         print_average_scores(model_scores, "FINETUNED MODEL")
@@ -54,7 +53,4 @@ def main():
         print(f"Error during judging: {e}")
         
 if __name__ == "__main__":
-    # print env variable TEST_SECRET
-    test_secret = os.getenv("TEST_SECRET", "<unset>")
-    print(f"(python) TEST_SECRET: {test_secret}")
     main()
