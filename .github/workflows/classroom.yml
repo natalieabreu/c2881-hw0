@@ -20,5 +20,6 @@ jobs:
       shell: bash
       env:
         TEST_SECRET: ${{ secrets.TEST_SECRET }}
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
         bash eval/run_tests.sh
